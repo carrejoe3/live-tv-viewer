@@ -1,11 +1,13 @@
 <script>
-	import { Provider } from 'svelte-redux-connect';
-	import store from '../store';
-	import 'papercss/dist/paper.min.css';
+  import store from '../store';
+  import { onMount } from 'svelte';
 	import { Button, Card } from 'spaper';
-</script>
+  import 'papercss/dist/paper.min.css';
 
-<Provider {store} />
+  onMount(async () => {
+    store.dispatch({ type:'INCREMENT' });
+  })
+</script>
 
 <div class="container paper margin-top margin-bottom">
 	<Card title="My awesome Paper card!" image="https://picsum.photos/768">

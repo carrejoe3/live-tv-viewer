@@ -1,14 +1,32 @@
-import { createStore, combineReducers } from 'redux';
-import catReducer from './reducers/cats';
+import { createStore } from 'redux';
 
-export const createReducer = (initialState, handlers) => {
-	return (state = initialState, action) => {
-		return (handlers[action.type] && handlers[action.type](state, action)) || state;
-	};
-};
+function reducer (state = 0, action) {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1
+    case 'DECREMENT':
+      return state - 1
+    default:
+      return state
+  }
+}
 
-const rootReducer = combineReducers({
-	cats: catReducer
-});
+function svelteStoreEnhancer(createStoreApi) {
+	return function (reducer, initialState) {
+		const reduxStore = createStoreApi(
+			reducer, initialState
+		);
+		return {
+			...reduxStore,
+			subscribe(fn) {
+				fn(reduxStore.getState());
 
-export default createStore(rootReducer, {});
+				return reduxStore.subscribe(() => {
+					fn(reduxStore.getState());
+				});
+			}
+		}
+	}
+}
+
+export default createStore(reducer, svelteStoreEnhancer);

@@ -25,12 +25,12 @@
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.2.6",
 		"svelte-preprocess": "^4.10.1",
-		"svelte-redux-connect": "^1.2.1",
 		"tslib": "^2.3.1",
 		"typescript": "~4.5.4"
 	},
 	"type": "module",
 	"dependencies": {
+		"node-twitch": "^0.4.5",
 		"papercss": "^1.8.3",
 		"spaper": "^0.4.6"
 	}
