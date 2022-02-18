@@ -30,8 +30,11 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"node-twitch": "^0.4.5",
+		"@twurple/api": "^5.0.18",
+		"@twurple/auth": "^5.0.18",
+		"axios": "^0.26.0",
 		"papercss": "^1.8.3",
+		"redux-thunk": "^2.4.1",
 		"spaper": "^0.4.6"
 	}
 }
