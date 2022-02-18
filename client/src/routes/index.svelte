@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { getGames } from '../store/actions';
+  import { getGames } from '../store/store';
   import store from '../store/store';
   import 'papercss/dist/paper.min.css';
 
