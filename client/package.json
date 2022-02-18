@@ -32,8 +32,8 @@
 	"dependencies": {
 		"@twurple/api": "^5.0.18",
 		"@twurple/auth": "^5.0.18",
-		"axios": "^0.26.0",
 		"papercss": "^1.8.3",
+		"redux-devtools-extension": "^2.13.9",
 		"redux-thunk": "^2.4.1",
 		"spaper": "^0.4.6"
 	}

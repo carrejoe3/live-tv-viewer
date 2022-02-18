@@ -1,10 +1,11 @@
 <script>
-  import store from '../store';
   import { onMount } from 'svelte';
+  import { getGames } from '../store/actions';
+  import store from '../store/store';
   import 'papercss/dist/paper.min.css';
 
   onMount(async () => {
-    store.dispatch({ type:'INCREMENT' });
+    store.dispatch(getGames())
   })
 </script>
 
